@@ -11,7 +11,6 @@ const events = {
     },
     inBut(event) {
         let field = event.parentNode.parentNode.parentNode
-        // удаляем тэг table
         Field.removeTable(field)
         let form = event.parentNode
         let input = form.querySelectorAll("input")
