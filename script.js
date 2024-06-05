@@ -46,7 +46,7 @@ const events = {
         let table = event.srcElement.parentNode.parentNode
         let index = indexField.get(table.id)
         let str = Field.getId(event)
-        if (index.has(str)) console.log("Ключ уже есть")
+        if (index.has(str)) return console.log("Ключ уже есть")
         let player = Player.lastPlayer(index)
         player == "X" ? player = "O" : player = "X"
         index.set(str, player)
