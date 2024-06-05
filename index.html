@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>X O</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png" />
+    <style>
+      .main {
+        display: flex;
+        flex-flow: column nowrap;
+        color: rgb(0, 0, 0);
+      }
+
+      .field {
+        display: inline-flex;
+        flex-flow: row nowrap;
+        align-items: baseline;
+        margin-left: 5%;
+        margin-top: 5%;
+      }
+
+      .panel {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 200px;
+        width: 250px;
+      }
+
+      input[type="number"] {
+        background-color: rgb(225, 150, 0);
+        color: #ffffff;
+        caret-color: rgb(255, 255, 255);
+        text-shadow: 1px 1px 1px rgb(225, 150, 0);
+        width: 40px;
+        height: 30px;
+        border-radius: 5px;
+        border: 1px solid;
+        font-size: 1em;
+      }
+
+      input[type="number"]:focus {
+        background-color: rgb(255, 255, 255);
+        color: #000;
+        caret-color: #000;
+        outline: none;
+      }
+
+      table {
+        aspect-ratio: 16/9;
+        border-collapse: collapse;
+        border: hidden;
+        margin-left: 10%;
+      }
+      tr {
+        text-align: center;
+      }
+      td {
+        width: 50px;
+        height: 50px;
+        border: thin solid rgb(0, 0, 0);
+      }
+      .win {
+        color: rgb(183, 0, 37);
+      }
+      body {
+        background-color: rgb(200, 195, 178);
+      }
+      .but1 {
+        display: inline-flex;
+        flex-direction: row;
+        justify-content: space-between;
+        /*column-gap: 20px; */
+      }
+
+      .but1 button {
+        width: 60px;
+        height: 40px;
+      }
+
+      .styled {
+        border: 0;
+        line-height: 2.5;
+        padding: 0 20px;
+        font-size: 1rem;
+        text-align: center;
+        color: #fff;
+        text-shadow: 1px 1px 1px #000;
+        border-radius: 10px;
+        background-color: rgb(225, 150, 0);
+        background-image: linear-gradient(
+          to top left,
+          rgb(0 0 0 / 20%),
+          rgb(0 0 0 / 20%) 30%,
+          rgb(0 0 0 / 0%)
+        );
+        box-shadow: inset 2px 2px 3px rgb(255 255 255 / 60%),
+          inset -2px -2px 3px rgb(0 0 0 / 60%);
+      }
+
+      .styled:hover {
+        background-color: rgb(255 150 0 / 100%);
+      }
+
+      .styled:active {
+        box-shadow: inset -2px -2px 3px rgb(255 255 255 / 60%),
+          inset 2px 2px 3px rgb(0 0 0 / 60%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="field">
+        <div class="panel">
+          <div class="but1">
+            <button
+              class="styled"
+              type="button"
+              value="3"
+              onclick="events.sizeBut(this)"
+            >
+              x3
+            </button>
+            <button
+              class="styled"
+              type="button"
+              value="5"
+              onclick="events.sizeBut(this)"
+            >
+              x5
+            </button>
+            <button
+              class="styled"
+              type="button"
+              value="10"
+              onclick="events.sizeBut(this)"
+            >
+              x10
+            </button>
+          </div>
+          <form>
+            <input type="number" placeholder="3" value="3" min="3" max="10" />
+            <input type="number" placeholder="3" value="3" min="3" max="10" />
+            <input
+              class="styled"
+              type="button"
+              onclick="events.inBut(this)"
+              value="Ok"
+            />
+            <button class="styled" type="button" onclick="events.start(this)">
+              Start
+            </button>
+          </form>
+          <button class="styled" type="button" onclick="events.newField(this)">
+            +
+          </button>
+        </div>
+        <table>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
